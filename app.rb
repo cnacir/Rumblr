@@ -47,7 +47,7 @@ end
 
 delete "/account" do
 	@user = User.find(session[:user_id])
-	@user.destroy
+	@user.destroy unless @user.username == "admin"
 
 	session[:user_id] = nil
 
