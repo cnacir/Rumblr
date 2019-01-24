@@ -2,7 +2,19 @@ require 'sinatra/activerecord'
 require 'pg'
 require 'sinatra/base'
 
-set :database, {adapter:'postgresql', database: 'rumblr', host: 'localhost', username: 'postgres', password: ENV["POSTGRESQL_PASSWORD"]}
+configure :development do
+  set :database, {
+    adapter: "postgresql",
+    database: "rumblr",
+		host: "localhost",
+    username: "postgres",
+    password: ENV["POSTGRESQL_PASSWORD"]
+  }
+end
+
+configure :production do
+    set :database, ENV['DATABASE_URL']
+end
 
 class User < ActiveRecord::Base
 	has_many :posts, :dependent => :destroy

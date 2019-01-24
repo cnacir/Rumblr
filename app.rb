@@ -4,9 +4,7 @@ require 'will_paginate/active_record'
 require 'will_paginate-bootstrap'
 require './models'
 
-
 enable :sessions
-
 
 get "/" do
 	erb :landing_page
