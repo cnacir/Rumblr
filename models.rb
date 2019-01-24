@@ -2,7 +2,7 @@ require 'sinatra/activerecord'
 require 'pg'
 require 'sinatra/base'
 
-set :database, {adapter:'postgresql', database: 'rumblr', host: 'localhost', username: 'postgres', password: 'Canmert&91'}
+set :database, {adapter:'postgresql', database: 'rumblr', host: 'localhost', username: 'postgres', password: ENV["POSTGRESQL_PASSWORD"]}
 
 class User < ActiveRecord::Base
 	has_many :posts, :dependent => :destroy
