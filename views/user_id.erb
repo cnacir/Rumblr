@@ -1,0 +1,70 @@
+<section id="right-side" class="ftco-fixed clearfix">
+	<div class="image js-fullheight float-left">
+		<div class="home-slider owl-carousel js-fullheight">
+			<div class="slider-item js-fullheight" style="background-image: url('images/image_8.jpg');">
+				<div class="overlay"></div>
+				<div class="container">
+					<div class="row slider-text align-items-end" data-scrollax-parent="true">
+						<div class="col-md-10 col-sm-12 ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+							<p class="cat open"><span>Open</span></p>
+							<h1 class="mb-3 open-intro" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Express yourself</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="slider-item js-fullheight" style="background-image: url('images/Freedom.jpg');">
+				<div class="overlay"></div>
+				<div class="container">
+					<div class="row slider-text align-items-end" data-scrollax-parent="true">
+						<div class="col-md-10 col-sm-12 ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+							<p class="cat freedom"><span>Freedom</span></p>
+							<h1 class="mb-3 freedom-intro" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Post whatever you want, whenever you want</h1>
+						</div>
+					</div>
+				</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="users" class="page-container contact-section float-right">
+			<div class="row justify-content-center align-items-center d-flex mb-5 contact-info">
+				<form action="/users" method="post" id="search" class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" name="search">
+      <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+    </form>
+
+		<div class="row">
+			<div class="col-sm">
+				<% @recent_posts.each do |post| %>
+				<div class="blog-entry-4 d-flex ftco-animate">
+					<a href="blog-single.html" class="blog-img" style="background-image: url(images/image_11.jpg);">
+					</a>
+				<div class="text">
+				<h3 class="mb-4">
+					<%= post.title %>
+				</h3>
+				<p class="meta">
+					<span><strong>
+						<%= @user.username %>
+					<strong></span>
+					<span>@
+						<%= post.created_at.strftime("%m/%d/%Y %I:%M %p") %>
+					</span>
+				</p>
+				<p>
+					<%= post.content[0..100] %>
+				</p><hr>
+			</div>
+		</div>
+
+		<% end %>
+</div>
+</div>
+
+<div class="flickr_pagination">
+<div class="page_info">
+	<%= page_entries_info @recent_posts %>
+</div>
+<%= will_paginate @recent_posts, :container => false %>
+</div>

@@ -1,22 +1,95 @@
-<div class="page-container contact-section float-right">
-	<div class="row d-flex mb-5 contact-info">
-		<div class="col-md-12 mb-4">
-			<h2 class="h4">Personal Profile</h2>
+<section id="right-side" class="ftco-fixed clearfix">
+	<div class="image js-fullheight float-left">
+		<div class="home-slider owl-carousel js-fullheight">
+			<div class="slider-item js-fullheight" style="background-image: url('images/image_8.jpg');">
+				<div class="overlay"></div>
+				<div class="container">
+					<div class="row slider-text align-items-end" data-scrollax-parent="true">
+						<div class="col-md-10 col-sm-12 ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+							<p class="cat open"><span>Open</span></p>
+							<h1 class="mb-3 open-intro" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Express yourself</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="slider-item js-fullheight" style="background-image: url('images/Freedom.jpg');">
+				<div class="overlay"></div>
+				<div class="container">
+					<div class="row slider-text align-items-end" data-scrollax-parent="true">
+						<div class="col-md-10 col-sm-12 ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+							<p class="cat freedom"><span>Freedom</span></p>
+							<h1 class="mb-3 freedom-intro" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Post whatever you want, whenever you want</h1>
+						</div>
+					</div>
+				</div>
+				</div>
+			</div>
 		</div>
-		<div class="w-100"></div>
+
+<div class="page-container float-right">
+	<div id="personal-profile" class="row justify-content-center align-items-center d-flex mb-5">
+		<div class="col-md-12 mb-4">
+			<h2 class="personal-profile"><center>Personal Profile</center></h2>
+		</div>
+		</div>
+		<div id="profile" class="row justify-content-center align-items-center d-flex mb-5 contact-info">
 		<div class="col-md-3">
-			<p><span>Username:</span>
+			<p><span><h3 class="h4"><strong>Username:</strong></h3></span><br /><hr class="hr">
 				<%= @current_user.username %></p>
 		</div>
 		<div class="col-md-3">
-			<p><span>Password:</span>
+			<p><span><h3 class="h4"><strong>Password:</strong></h3></span><br /><hr class="hr">
 				<%= @current_user.password %></p>
 		</div>
 		<div class="col-md-3">
-			<p><span>Birthday:</span>
-				<%= @current_user.birthday %></p>
+			<p><span><h3 class="h4"><strong>Birthday:</strong></h3></span><br /><hr class="hr">
+				<%= @bday %></p>
 		</div>
 		<div class="col-md-3">
-			<p><span>Email:</span>
+			<p><span><h3 class="h4"><strong>Email:</strong></h3></span><br /><hr class="hr">
 				<%= @current_user.email %></p>
 		</div>
+
+
+		<form action="/account" method="post">
+  	<input type="hidden" name="_method" value="delete">
+		<div id="button" class="col-sm-12">
+		<button type="submit" class="btn btn-outline-dark mb-2">Delete</button>
+		</div>
+		</form>
+
+	</div>
+			<div class="row">
+				<div class="col-md-12">
+					<% @recent_posts.each do |post| %>
+					<div class="blog-entry-4 d-flex ftco-animate">
+						<a href="#" class="blog-img" style="background-image: url(images/image_11.jpg);">
+						</a>
+						<div class="text">
+							<h3 class="mb-4">
+								<%= post[:title] %>
+							</h3>
+							<p class="meta">
+								<span><strong>
+									<%= @current_user.username %>
+								</strong></span>
+								<span>@
+									<%= post[:created_at].strftime("%m/%d/%Y %I:%M %p") %>
+								</span>
+							</p>
+							<p>
+								<%= post[:content][0..100] %>
+							</p><hr>
+						</div>
+					</div>
+					<% end %>
+				</div>
+			</div>
+
+				<div class="flickr_pagination">
+		    <div class="page_info">
+		      <%= page_entries_info @recent_posts %>
+		    </div>
+		    <%= will_paginate @recent_posts, :container => false %>
+		  </div>
