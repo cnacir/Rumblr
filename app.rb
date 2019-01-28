@@ -52,6 +52,15 @@ delete "/account" do
 	redirect "/"
 end
 
+delete "/post/:id" do
+	@post = Post.find(params[:id])
+	@post.destroy
+
+
+	redirect "/profile"
+end
+
+
 post "/signup" do
 	@user = User.create(
 		username: params[:username],

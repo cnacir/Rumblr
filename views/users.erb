@@ -46,15 +46,16 @@
 				</h3>
 				<p class="meta">
 					<span><strong>
-						<%= @user.username %>
-					<strong></span>
+						<%= post.user.username %>
+					</strong></span>
 					<span>@
 						<%= post.created_at.strftime("%m/%d/%Y %I:%M %p") %>
 					</span>
 				</p>
 				<p>
 					<%= post.content[0..100] %>
-				</p><hr>
+				</p>
+				<hr>
 			</div>
 		</div>
 

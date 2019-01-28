@@ -8,7 +8,7 @@ configure :development do
     database: "rumblr",
 		host: "localhost",
     username: "postgres",
-    password: ENV["POSTGRESQL_PASSWORD"]
+    password: ENV["PSQL_PASSWORD"]
   }
 end
 
