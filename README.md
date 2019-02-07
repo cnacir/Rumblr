@@ -1,8 +1,8 @@
 
 
-https://github.com/cnacir/Rumblr/blob/master/public/images/Rumblr.png
 
-# ![WebApp](https://iharsh234.github.io/WebApp/images/demo/demo_landing.JPG)
+
+# ![Rumblr](https://github.com/cnacir/Rumblr/blob/master/public/images/Rumblr.png)
 # Rumblr
 <table>
 <tr>
