@@ -31,8 +31,8 @@ Demo password: admin
 
 ## Built with 
 
-- [jQuery - Ajax](http://www.w3schools.com/jquery/jquery_ref_ajax.asp) - jQuery simplifies HTML document traversing, event handling, animating, and Ajax interactions for rapid web development.
-- [Google Chart API](https://developers.google.com/chart/interactive/docs/quick_start) - Free , Rich Gallery , Customizable and Cross-browser compatible.
+- [HTML/CSS](http://www.w3schools.com) - The backbone of any web development project. Regardless of the stack used, these are always in the foundation.
+- [Sinatra](http://sinatrarb.com/) - Lightweight, micro framework for building full stack web applications.
 - [Bootstrap](http://getbootstrap.com/) - Extensive list of components and  Bundled Javascript plugins.
 
 
