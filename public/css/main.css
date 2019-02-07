@@ -36,7 +36,6 @@
   overflow: hidden;
   max-width: 100em;
   text-overflow: ellipsis;
-  font-size: 1vw;
 }
 
 #personal-profile {
@@ -46,9 +45,10 @@
   max-height: 3em;
 }
 
-#profile p {
+#profile .paragraph {
   overflow: hidden;
   white-space: normal;
+  font-size: 100%;
 }
 
 #login {
@@ -84,12 +84,8 @@
   padding-top: 5em;
 }
 
-span {
-  font-size: 1.10em;
-}
-
-p {
-  font-size: 1.35em;
+.paragraph {
+  font-size: 100%;
 }
 
 .personal-profile {
